@@ -1,8 +1,9 @@
+const config = require("config");
 const mongoose = require("mongoose");
 const logger = require("./logger");
 
 module.exports = function() {
-    mongoose.connect("mongodb://localhost/AwesomePlayground",{
+    mongoose.connect(config.get("db"),{
         useNewUrlParser: true,
         useUnifiedTopology: true,
         useFindAndModify: false,
